@@ -1,0 +1,14 @@
+body{
+    padding: 0px;
+}
+.container-fluid{
+    padding:0px;
+
+}
+.has-error{
+    border-color: red;
+}
+
+.has-success{
+    border-color : green;
+}

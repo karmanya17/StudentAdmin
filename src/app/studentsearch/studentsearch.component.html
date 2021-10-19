@@ -1,0 +1,52 @@
+<div class="container mt-5">
+    <h1 class="h3 mb-0 text-gray-800">Search Student</h1>
+    <form [formGroup]="searchForm" (ngSubmit)="submitStudent()">
+            <div class="d-flex justify-content-start mt-5">
+               
+                <label for="" class="mt-1"><b>Student ID</b></label>
+                <input [ngClass]="{
+                        'has-error':searchForm.controls.id.touched && searchForm.controls.id.invalid,
+                        'has-success' : searchForm.controls.id.touched && searchForm.controls.id.valid
+                    }" type="text" formControlName="id" class="form-control w-25 ml-2 ">
+                <input type="submit" class="btn btn-primary btn-sm ml-3">
+            </div>
+    </form>
+    <div class="row" *ngIf="flag==-1">
+        <h6 style="color: red;">Enter Valid Student Id</h6>
+    </div>
+    <div class="row" *ngIf="flag==1">
+        <div class="col-lg-6">
+            <div class="card border-left-primary shadow h-100 py-2 mt-3">
+                <div class="card-body">
+                    <div>
+                        <h6>Name : {{studentData.name}}</h6>
+                    </div>
+                    <div>
+                        <h6>Date Of Birth : {{studentData.dob}}</h6>
+                    </div>
+                    <div>
+                        <h6>Skills : {{studentData.skills}}</h6>
+                    </div>
+                    <div>
+                        <h6>Department : {{studentData.department}}</h6>
+                    </div>
+                    <div>
+                        <h6>Address : {{studentData.address}}</h6>
+                    </div>
+                    <div>
+                        <h6>City : {{studentData.city}}</h6>
+                    </div>
+                    <div>
+                        <h6>State : {{studentData.state}}</h6>
+                    </div>
+                    <div>
+                        <h6>Country : {{studentData.country}}</h6>
+                    </div>
+                    <div>
+                        <h6>ZipCode : {{studentData.zipcode}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
