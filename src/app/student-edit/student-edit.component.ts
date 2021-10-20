@@ -35,8 +35,7 @@ export class StudentEditComponent implements OnInit {
       this.id = paramsData.id;
       this.studentService.getUserByID(paramsData.id).subscribe((data) => {
         console.log(data)
-        delete data.id
-        this.studentForm.setValue(data)
+        this.studentForm.patchValue(data)
       })
     })
 
