@@ -17,7 +17,7 @@ app.post("/student",async function(req,res){
         let connection =await mongoclient.connect(URL)
 
         let db = connection.db("StudentAdmin")
-        req.body.id= parseInt(await db.collection("students").count())+1
+        req.body.id= parseInt(await db.collection("students").count())+1          // Giving a Roll Id to the students .
         await db.collection("students").insertOne(req.body)
 
         await connection.close()
