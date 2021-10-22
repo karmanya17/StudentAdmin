@@ -82,7 +82,7 @@ app.put("/student-edit/:id",async function(req,res){
 
         req.body.id=id
 
-        await db.collection("students").replaceOne({id:id},req.body)
+        await db.collection("students").findOneAndUpdate({id:id},{$set:req.body})
 
         await connection.close()
 
